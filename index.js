@@ -1,12 +1,4 @@
 const botaoAdicionar = document.getElementById('adicionar-item');
 
-botaoAdicionar.addEventListener("click", (evento) => {      
-    evento.preventDefault();
-
-    const itemInput = document.getElementById('input-item');
-
-    if (itemInput.value === "") {
-        alert('adicione algum item');
-    }
-
-});
+botaoAdicionar.addEventListener("click", (evento) => { 
+})
