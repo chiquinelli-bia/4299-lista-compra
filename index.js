@@ -6,5 +6,6 @@ botaoAdicionar.addEventListener("click", (evento) => {
     if (itemInput.value === "") {
         alert('adicione algum item');
     } else {
+       
     }
 })
