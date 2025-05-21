@@ -1,11 +1,26 @@
+const itemInput = document.getElementById('input-item');
+const listaDeCompras = document.getElementById("lista-de-compras");
 const botaoAdicionar = document.getElementById('adicionar-item');
+let calc = 0;
 
-botaoAdicionar.addEventListener("click", (evento) => { 
-    const itemInput = document.getElementById('input-item');
-
-    if (itemInput.value === "") {
+botaoAdicionar.addEventListener('click', (evento) => { 
+    evento.preventDefault();
+    if (itemInput.value === '') {
         alert('adicione algum item');
-    } else {
-       
+        return
     }
+        const tagLista = document.createElement('li');
+        const tagContainer = document.createElement('div');
+        tagContainer.classList.add('lista-item-container');
+        const tagCheckbox = document.createElement('input');
+        tagCheckbox.type = 'checkbox';
+        tagCheckbox.id = 'checkbox-' + calc++;
+        const tagP = document.createElement('p');
+        tagP.innerText = itemInput.value;
+
+        tagContainer.appendChild(tagCheckbox);
+        tagContainer.appendChild(tagP);
+        tagLista.appendChild(tagContainer);
+        listaDeCompras.appendChild(tagLista);
+
 })
