@@ -27,6 +27,15 @@ botaoAdicionar.addEventListener('click', (evento) => {
     tagData.classList.add('texto-data');
     tagData.innerText = dataCompleta;
 
+    tagCheckbox.addEventListener('click', function(){
+        if (tagCheckbox.checked) {
+            tagP.style.textDecoration = 'line-through';
+        } else {
+            tagP.style.textDecoration = 'none';
+
+        }
+    })
+
     tagContainer.appendChild(tagCheckbox);
     tagContainer.appendChild(tagP);
     tagLista.appendChild(tagContainer);
