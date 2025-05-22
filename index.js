@@ -41,4 +41,19 @@ botaoAdicionar.addEventListener('click', (evento) => {
     tagLista.appendChild(tagContainer);
     listaDeCompras.appendChild(tagLista);
     tagLista.appendChild(tagData);
+
+    listaVazia()
 })
+
+function listaVazia () {
+    const msgListaVazia = document.querySelector('.mensagem-lista-vazia');
+    const itensDaLista = listaDeCompras.querySelectorAll('li');
+
+    if (itensDaLista.length === 0) {
+        msgListaVazia.style.display = 'block';
+    } else {
+        msgListaVazia.style.display = 'none';
+    }
+}
+
+listaVazia()
