@@ -1,10 +1,7 @@
 const itemInput = document.getElementById('input-item');
-const listaDeCompras = document.getElementById("lista-de-compras");
-const botaoAdicionar = document.getElementById('adicionar-item');
 let calc = 0;
 
-botaoAdicionar.addEventListener('click', (evento) => { 
-    evento.preventDefault();
+export function criarItemlista() {
     if (itemInput.value === '') {
         alert('adicione algum item');
         return
@@ -39,21 +36,8 @@ botaoAdicionar.addEventListener('click', (evento) => {
     tagContainer.appendChild(tagCheckbox);
     tagContainer.appendChild(tagP);
     tagLista.appendChild(tagContainer);
-    listaDeCompras.appendChild(tagLista);
     tagLista.appendChild(tagData);
 
-    listaVazia()
-})
+    return tagLista;
 
-function listaVazia () {
-    const msgListaVazia = document.querySelector('.mensagem-lista-vazia');
-    const itensDaLista = listaDeCompras.querySelectorAll('li');
-
-    if (itensDaLista.length === 0) {
-        msgListaVazia.style.display = 'block';
-    } else {
-        msgListaVazia.style.display = 'none';
-    }
 }
-
-listaVazia()
