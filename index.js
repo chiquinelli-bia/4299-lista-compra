@@ -9,22 +9,27 @@ botaoAdicionar.addEventListener('click', (evento) => {
         alert('adicione algum item');
         return
     }
-        const tagLista = document.createElement('li');
-        const tagContainer = document.createElement('div');
-        tagContainer.classList.add('lista-item-container');
-        const tagCheckbox = document.createElement('input');
-        tagCheckbox.type = 'checkbox';
-        tagCheckbox.id = 'checkbox-' + calc++;
-        const tagP = document.createElement('p');
-        tagP.innerText = itemInput.value;
+    const diaDaSemana = new Date().toLocaleDateString('pt-BR', {weekday: 'long'});
+    const data = new Date().toLocaleDateString('pt-BR');
+    const hora = new Date().toLocaleTimeString('pt-BR', {hour: 'numeric', minute: 'numeric'});
+    let dataCompleta = `${diaDaSemana} (${data}) ás ${hora}`; 
 
-        tagContainer.appendChild(tagCheckbox);
-        tagContainer.appendChild(tagP);
-        tagLista.appendChild(tagContainer);
-        listaDeCompras.appendChild(tagLista);
+    const tagLista = document.createElement('li');
+    const tagContainer = document.createElement('div');
+    const tagCheckbox = document.createElement('input');
+    const tagP = document.createElement('p');
+    const tagData = document.createElement('p');
 
-        const diaDaSemana = new Date().toLocaleDateString('pt-BR', {weekday: 'long'});
-        const data = new Date().toLocaleDateString('pt-BR');
-        const hora = new Date().toLocaleTimeString('pt-BR', {hour: 'numeric', minute: 'numeric'});
-        let dataCompleta = `${diaDaSemana} (${data}) ás ${hora}`;
+    tagContainer.classList.add('lista-item-container');
+    tagCheckbox.type = 'checkbox';
+    tagCheckbox.id = 'checkbox-' + calc++;
+    tagP.innerText = itemInput.value;
+    tagData.classList.add('texto-data');
+    tagData.innerText = dataCompleta;
+
+    tagContainer.appendChild(tagCheckbox);
+    tagContainer.appendChild(tagP);
+    tagLista.appendChild(tagContainer);
+    listaDeCompras.appendChild(tagLista);
+    tagLista.appendChild(tagData);
 })
