@@ -98,13 +98,28 @@ form {
 
 .lista-item-container {
     display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     gap: 8px;
 }
 x
 ul {
     list-style-type: none;
 }
+.container-sub-itens {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+.button-icons {
+    display: flex;
+    border: none;
+}
 
+button img {
+    width: 20px;
+    height: 20px;
+}
 .input-checkbox {
     display: none;
 }
