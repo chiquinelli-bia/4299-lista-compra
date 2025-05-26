@@ -1,3 +1,4 @@
+import gerarData from './gerarData.js';
 const itemInput = document.getElementById('input-item');
 let calc = 0;
 
@@ -6,16 +7,13 @@ export function criarItemlista() {
         alert('adicione algum item');
         return
     }
-    const diaDaSemana = new Date().toLocaleDateString('pt-BR', {weekday: 'long'});
-    const data = new Date().toLocaleDateString('pt-BR');
-    const hora = new Date().toLocaleTimeString('pt-BR', {hour: 'numeric', minute: 'numeric'});
-    let dataCompleta = `${diaDaSemana} (${data}) ás ${hora}`; 
 
     const tagLista = document.createElement('li');
     const tagContainer = document.createElement('div');
     const tagCheckbox = document.createElement('input');
     const tagP = document.createElement('p');
     const tagData = document.createElement('p');
+    const dataCompleta = gerarData();
 
     tagContainer.classList.add('lista-item-container');
     tagCheckbox.type = 'checkbox';
