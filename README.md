@@ -1,7 +1,7 @@
 
 ![Thumbnail do projeto](./img/Front-end-JavaScript_%20Construindo%20Páginas%20Dinâmicas..png)
 
-# Titulo do projeto
+# Lista De Compras
 
 Aplicação web de lista de compras para o curso de construção de páginas dinâmicas com JavaScript.
 
